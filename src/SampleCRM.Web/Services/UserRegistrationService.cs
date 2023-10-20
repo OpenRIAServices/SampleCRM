@@ -1,5 +1,4 @@
-using OpenRiaServices.DomainServices.Hosting;
-using OpenRiaServices.DomainServices.Server;
+using OpenRiaServices.Server;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Profile;

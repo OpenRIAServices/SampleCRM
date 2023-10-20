@@ -1,4 +1,4 @@
-using OpenRiaServices.DomainServices.Server.ApplicationServices;
+using OpenRiaServices.Server.Authentication.AspNetMembership;
 
 namespace SampleCRM.Web
 {

@@ -1,4 +1,4 @@
-﻿using OpenRiaServices.DomainServices.Client;
+﻿using OpenRiaServices.Client;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;

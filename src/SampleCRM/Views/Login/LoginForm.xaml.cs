@@ -1,4 +1,4 @@
-﻿using OpenRiaServices.DomainServices.Client.ApplicationServices;
+﻿using OpenRiaServices.Client.Authentication;
 using SampleCRM.Web;
 using System;
 using System.ComponentModel.DataAnnotations;

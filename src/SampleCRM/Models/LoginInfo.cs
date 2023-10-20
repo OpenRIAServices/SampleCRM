@@ -1,5 +1,5 @@
-﻿using OpenRiaServices.DomainServices.Client;
-using OpenRiaServices.DomainServices.Client.ApplicationServices;
+﻿using OpenRiaServices.Client;
+using OpenRiaServices.Client.Authentication;
 using System;
 using System.ComponentModel.DataAnnotations;
 

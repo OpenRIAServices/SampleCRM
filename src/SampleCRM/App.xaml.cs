@@ -1,12 +1,15 @@
 ﻿#if OPENSILVER
 
-using OpenRiaServices.DomainServices.Client;
-using OpenRiaServices.DomainServices.Client.ApplicationServices;
+using OpenRiaServices.Client;
+using OpenRiaServices.Client.Authentication;
+using OpenRiaServices.Client.DomainClients;
 using SampleCRM.Web;
 
 #endif
 
 using System;
+using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Windows;
 
 namespace SampleCRM
@@ -22,14 +25,21 @@ namespace SampleCRM
 
             InitializeComponent();
 
-            var webContext = new WebContext();
-            webContext.Authentication = new FormsAuthentication();
-            //webContext.Authentication = new WindowsAuthentication();
-            ApplicationLifetimeObjects.Add(webContext);
+            var httpClientHandler = new HttpClientHandler();
+            if (RuntimeInformation.ProcessArchitecture != Architecture.Wasm)
+            {
+                httpClientHandler.UseCookies = true;
+                httpClientHandler.CookieContainer = new System.Net.CookieContainer();
+            }
 
-#if OPENSILVER
-            ((DomainClientFactory)DomainContext.DomainClientFactory).ServerBaseUri = new Uri("http://localhost:54837/");
-#endif
+            DomainContext.DomainClientFactory = new BinaryHttpDomainClientFactory(new Uri("http://localhost:5282/"), httpClientHandler);
+
+            var webContext = new WebContext();
+            webContext.Authentication = new FormsAuthentication()
+            {
+                DomainContext = new AuthenticationContext()
+            };
+            //webContext.Authentication = new WindowsAuthentication();
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)

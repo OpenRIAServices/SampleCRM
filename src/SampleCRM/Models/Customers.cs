@@ -1,4 +1,4 @@
-﻿using OpenRiaServices.DomainServices.Client;
+﻿using OpenRiaServices.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,25 +7,25 @@ namespace SampleCRM.Web.Models
 {
     public partial class Customers : Entity
     {
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        protected override void OnPropertyChanged(string propertyName)
         {
-            if (e.PropertyName == "FirstName" 
-                || e.PropertyName == "LastName")
+            if (propertyName == "FirstName" 
+                || propertyName == "LastName")
             {
                 RaisePropertyChanged("FullName");
                 RaisePropertyChanged("Initials");
             } 
-            else if (e.PropertyName == "AddressLine1" 
-                || e.PropertyName == "AddressLine2"
-                || e.PropertyName == "City"
-                || e.PropertyName == "Region"
-                || e.PropertyName == "PostalCode"
-                || e.PropertyName == "CountryName")
+            else if (propertyName == "AddressLine1" 
+                || propertyName == "AddressLine2"
+                || propertyName == "City"
+                || propertyName == "Region"
+                || propertyName == "PostalCode"
+                || propertyName == "CountryName")
             {
                 RaisePropertyChanged("FullAddress");
             }
 
-            base.OnPropertyChanged(e);
+            base.OnPropertyChanged(propertyName);
         }
 
         private IEnumerable<Models.CountryCodes> _countryCodes;
@@ -37,7 +37,7 @@ namespace SampleCRM.Web.Models
                 if (_countryCodes != value)
                 {
                     _countryCodes = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("CountryCodes"));
+                    OnPropertyChanged("CountryCodes");
                 }
             }
         }
@@ -53,7 +53,7 @@ namespace SampleCRM.Web.Models
                 if (_isEditMode != value)
                 {
                     _isEditMode = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("IsEditMode"));
+                    OnPropertyChanged("IsEditMode");
                 }
             }
         }
@@ -67,7 +67,7 @@ namespace SampleCRM.Web.Models
                 if (_countryName != value)
                 {
                     _countryName = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("CountryName"));
+                    OnPropertyChanged("CountryName");
                 }
             }
         }

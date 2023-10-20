@@ -1,4 +1,4 @@
-﻿using OpenRiaServices.DomainServices.Client;
+﻿using OpenRiaServices.Client;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,11 +7,11 @@ namespace SampleCRM.Web.Models
 {
     public partial class Products : Entity
     {
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        protected override void OnPropertyChanged(string propertyName)
         {
-            if (e.PropertyName == nameof(CategoryID))
+            if (propertyName == nameof(CategoryID))
             {
-                OnPropertyChanged(new PropertyChangedEventArgs("CategoryName"));
+                OnPropertyChanged("CategoryName");
             }
         }
 
@@ -26,8 +26,8 @@ namespace SampleCRM.Web.Models
                 if (_categoriesCombo != value)
                 {
                     _categoriesCombo = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("CategoriesCombo"));
-                    OnPropertyChanged(new PropertyChangedEventArgs("CategoryName"));
+                    OnPropertyChanged("CategoriesCombo");
+                    OnPropertyChanged("CategoryName");
                 }
             }
         }
