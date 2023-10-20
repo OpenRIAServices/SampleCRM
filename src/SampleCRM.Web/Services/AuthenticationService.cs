@@ -1,5 +1,6 @@
-using OpenRiaServices.DomainServices.Hosting;
-using OpenRiaServices.DomainServices.Server.ApplicationServices;
+
+using OpenRiaServices.Server;
+using OpenRiaServices.Server.Authentication.AspNetMembership;
 
 namespace SampleCRM.Web
 {

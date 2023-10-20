@@ -13,11 +13,11 @@ namespace SampleCRM.Web
         /// Override of the <c>OnPropertyChanged</c> method that generates property change notifications when <see cref="User.DisplayName"/> changes.
         /// </summary>
         /// <param name="e">The property change event args.</param>
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        protected override void OnPropertyChanged(string propertyName)
         {
-            base.OnPropertyChanged(e);
+            base.OnPropertyChanged(propertyName);
 
-            if (e.PropertyName == "Name" || e.PropertyName == "FriendlyName")
+            if (propertyName == "Name" || propertyName == "FriendlyName")
             {
                 this.RaisePropertyChanged("DisplayName");
             }

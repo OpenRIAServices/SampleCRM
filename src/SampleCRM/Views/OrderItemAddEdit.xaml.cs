@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows;
-using OpenRiaServices.DomainServices.Client;
+using OpenRiaServices.Client;
 
 namespace SampleCRM.Web.Views
 {

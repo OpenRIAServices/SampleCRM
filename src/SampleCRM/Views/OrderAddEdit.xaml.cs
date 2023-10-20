@@ -1,4 +1,4 @@
-﻿using OpenRiaServices.DomainServices.Client;
+﻿using OpenRiaServices.Client;
 using System;
 using System.Windows;
 using System.Windows.Controls;

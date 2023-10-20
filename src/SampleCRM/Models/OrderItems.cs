@@ -1,4 +1,4 @@
-﻿using OpenRiaServices.DomainServices.Client;
+﻿using OpenRiaServices.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,23 +8,23 @@ namespace SampleCRM.Web.Models
 {
     public partial class OrderItems : Entity
     {
-        protected override void OnPropertyChanged(PropertyChangedEventArgs e)
+        protected override void OnPropertyChanged(string propertyName)
         {
-            if (e.PropertyName == "UnitPrice"
-                || e.PropertyName == "Quantity")
+            if (propertyName == "UnitPrice"
+                || propertyName == "Quantity")
             {
                 RaisePropertyChanged("Subtotal");
             }
-            else if (e.PropertyName == "Subtotal" 
-                || e.PropertyName == "Discount")
+            else if (propertyName == "Subtotal" 
+                || propertyName == "Discount")
             {
                 RaisePropertyChanged("Total");
             }
-            else if (e.PropertyName == "OrderLine")
+            else if (propertyName == "OrderLine")
             {
                 RaisePropertyChanged("IsNew");
             }
-            else if (e.PropertyName == nameof(ProductID))
+            else if (propertyName == nameof(ProductID))
             {
                 if (ProductsCombo != null && ProductsCombo.Any())
                 {
@@ -32,7 +32,7 @@ namespace SampleCRM.Web.Models
                 }
             }
 
-            base.OnPropertyChanged(e);
+            base.OnPropertyChanged(propertyName);
         }
 
         public bool IsNew => OrderLine <= 0;
@@ -46,7 +46,7 @@ namespace SampleCRM.Web.Models
                 if (_isEditMode != value)
                 {
                     _isEditMode = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("IsEditMode"));
+                    OnPropertyChanged("IsEditMode");
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace SampleCRM.Web.Models
                 if (_taxTypes != value)
                 {
                     _taxTypes = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("TaxTypes"));
+                    OnPropertyChanged("TaxTypes");
                 }
             }
         }
@@ -74,9 +74,9 @@ namespace SampleCRM.Web.Models
                 if (_taxRate != value)
                 {
                     _taxRate = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("TaxRate"));
-                    OnPropertyChanged(new PropertyChangedEventArgs("Total"));
-                }
+                    OnPropertyChanged("TaxRate");
+                    OnPropertyChanged("Total");
+                }   
             }
         }
 
@@ -89,7 +89,7 @@ namespace SampleCRM.Web.Models
                 if (_productsCombo != value)
                 {
                     _productsCombo = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("ProductsCombo"));
+                    OnPropertyChanged("ProductsCombo");
                 }
             }
         }
@@ -103,7 +103,7 @@ namespace SampleCRM.Web.Models
                 if (_product != value)
                 {
                     _product = value;
-                    OnPropertyChanged(new PropertyChangedEventArgs("Product"));
+                    OnPropertyChanged("Product");
                 }
             }
         }
