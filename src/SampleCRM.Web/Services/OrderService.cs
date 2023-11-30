@@ -2,7 +2,6 @@
 using SampleCRM.Web.Attributes;
 using SampleCRM.Web.Models;
 using System;
-using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace SampleCRM.Web
@@ -51,7 +50,7 @@ namespace SampleCRM.Web
             order.OrderDate = order.LastModifiedOn = DateTime.Now.ToString();
             _context.Orders.Add(order);
 
-#if DEBUG
+#if DEBUG_
             var validationResult = _context.Entry(order).GetValidationResult();
             if (validationResult.ValidationErrors.Any())
             {

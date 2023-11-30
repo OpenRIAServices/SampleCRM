@@ -1,18 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup Label="Globals">
-    <SccProjectName>SAK</SccProjectName>
-    <SccProvider>SAK</SccProvider>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccLocalPath>SAK</SccLocalPath>
-    <Configurations>Debug;Release;</Configurations>
-  </PropertyGroup>
-
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RazorLangVersion>3.0</RazorLangVersion>
-    <LinkedOpenRiaServerProject>..\SampleCRM.Web\SampleCRM.Web.csproj</LinkedOpenRiaServerProject>
-    <RootNamespace>SampleCRM.Web</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
+    <LinkedOpenRiaServerProject>..\SampleCRM.Server\SampleCRM.Server.csproj</LinkedOpenRiaServerProject>
+    <RootNamespace>SampleCRM</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,7 +13,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>OPENSILVER</DefineConstants>
   </PropertyGroup>
-  
+
+  <ItemGroup>
+    <Compile Remove="Generated_Code\SampleCRM.Server.g.cs" />
+    <None Include="Generated_Code\SampleCRM.Server.g.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Remove="Assets\Barcode.png" />
     <None Remove="Assets\Bitcoin.png" />
@@ -247,11 +243,11 @@
     <Content Include="Views\Login\RegistrationForm.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Content>
-    <PackageReference Include="OpenRiaServices.Client.CodeGen" Version="5.4.0">
+    <PackageReference Include="OpenRiaServices.Client.CodeGen" Version="5.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="OpenRiaServices.Client.Core" Version="5.4.0" />
+    <PackageReference Include="OpenRiaServices.Client.Core" Version="5.4.1" />
     <PackageReference Include="OpenSilver" Version="2.0.1" />
     <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>

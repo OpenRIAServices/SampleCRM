@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCRM.Web", "SampleCRM.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A025E6EE-BE63-44B8-AC42-5C4E603A95CF}"
 	ProjectSection(SolutionItems) = preProject
+		..\.editorconfig = ..\.editorconfig
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
@@ -29,6 +30,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{0DEC38
 		..\images\SampleCRMEntityDesignerDiagram1.jpg = ..\images\SampleCRMEntityDesignerDiagram1.jpg
 		..\images\SampleCRMMockup1.png = ..\images\SampleCRMMockup1.png
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleCRM.Server", "SampleCRM.Server\SampleCRM.Server.csproj", "{E13A9D7B-C9C9-486F-B861-25CC70C8E253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +73,14 @@ Global
 		{A8AA986C-4AEF-489F-86EC-19029369765E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8AA986C-4AEF-489F-86EC-19029369765E}.Release|x64.ActiveCfg = Release|x64
 		{A8AA986C-4AEF-489F-86EC-19029369765E}.Release|x64.Build.0 = Release|x64
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Debug|x64.Build.0 = Debug|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Release|x64.ActiveCfg = Release|Any CPU
+		{E13A9D7B-C9C9-486F-B861-25CC70C8E253}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

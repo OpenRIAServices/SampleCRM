@@ -2,7 +2,6 @@
 using SampleCRM.Web.Attributes;
 using SampleCRM.Web.Models;
 using System;
-using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace SampleCRM.Web

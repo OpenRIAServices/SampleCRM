@@ -1,16 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<OutputType>WinExe</OutputType>
-		<TargetFramework>net472</TargetFramework>
-	</PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="OpenSilver.Simulator" Version="2.0.1" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenSilver.Simulator" Version="2.0.1" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\SampleCRM\SampleCRM.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleCRM\SampleCRM.csproj" />
+  </ItemGroup>
 
 </Project>
