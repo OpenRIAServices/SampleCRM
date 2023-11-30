@@ -29,7 +29,7 @@ namespace SampleCRM.Web.Views
                 if (ContentPage != null)
                     ContentPage.MakeBusy(false);
 
-                throw ex;
+                throw;
             }
         }
     }

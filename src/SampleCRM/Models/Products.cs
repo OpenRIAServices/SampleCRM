@@ -32,6 +32,6 @@ namespace SampleCRM.Web.Models
             }
         }
 
-        public string CategoryName => CategoriesCombo.FirstOrDefault(x => x.CategoryID == CategoryID)?.Name;
+        public string CategoryName => CategoriesCombo?.FirstOrDefault(x => x.CategoryID == CategoryID)?.Name;
     }
 }

@@ -105,7 +105,7 @@ namespace SampleCRM.Web.Views
                     }
                     load();
 #if DEBUG
-                    Console.WriteLine($"Orders, Order: {value.OrderID} selected");
+                    Console.WriteLine($"Orders, Order: {value?.OrderID} selected");
 #endif
                 }
             }
